@@ -1,0 +1,76 @@
+{
+  "rubric_version": 1,
+  "rules": [
+    {
+      "id": "R1",
+      "hint": "the user asks how to fix something without saying what they tried or think",
+      "question": "what have you tried, and what do you think the cause is?",
+      "scope": "own",
+      "patterns": [
+        "как\\s+(\\S+\\s+){0,2}(по|ис)?(фикс|исправ|почин)",
+        "\\bhow\\s+(can|do|should|to)\\s+(i|we\\s+)?\\s*fix",
+        "\\bhow\\s+(i|we)\\s+(can|could|should)\\s+fix",
+        "comment\\s+(je\\s+|on\\s+)?(peux|peut|dois|doit)?\\s*(corriger|réparer|fixer)"
+      ]
+    },
+    {
+      "id": "R2",
+      "hint": "the user asks for a full solution or ready-made code",
+      "question": "do you want a hint for the next step instead of the full answer?",
+      "scope": "own",
+      "patterns": [
+        "дай\\s+(мне\\s+)?(полный|весь|готовый|целый)?\\s*код",
+        "напиши\\s+за\\s+меня",
+        "реши\\s+(это|задачу|упражнение)",
+        "code\\s+compl[eè]t",
+        "donne[- ]?(moi)?\\s+(le|tout le)\\s+code",
+        "fais\\s+(cet|l')\\s*exercice",
+        "give\\s+me\\s+(the\\s+)?(full|complete|whole)?\\s*code",
+        "\\bsolve\\s+(it|this)\\s+for\\s+me"
+      ]
+    },
+    {
+      "id": "R4",
+      "hint": "the user asks to check their fix again without saying what changed and why",
+      "question": "what did you change, and why do you think it fixes the problem?",
+      "scope": "own",
+      "patterns": [
+        "\\bпровер\\w*\\s+(ещё|еще|снова|опять)",
+        "\\bя\\s+(ис|по)?(правил|пофиксил)(а|и)?\\b",
+        "\\bcheck\\s+(it\\s+)?again",
+        "\\bi\\s+fixed\\b",
+        "vérifie\\s+(encore|à nouveau|de nouveau)",
+        "j'ai\\s+corrigé"
+      ]
+    },
+    {
+      "id": "R6",
+      "hint": "the user asks the AI to write a text other people will read (PR, commit message, changelog, email, speech)",
+      "question": "write a draft first, and I will critique it as a reviewer would?",
+      "scope": "own",
+      "patterns": [
+        "body\\s+(для|for)\\s+(pr|pull)",
+        "описани\\w*\\s+(для\\s+)?(pr|пул)",
+        "(названи|текст|сообщени)\\w*\\s+(для\\s+)?коммит",
+        "changelog",
+        "напиши\\s+(письмо|мейл|mail)",
+        "commit\\s+message",
+        "pr\\s+description",
+        "description\\s+(de\\s+la\\s+|du\\s+)?(pr|pull)",
+        "message\\s+de\\s+commit",
+        "(écris|rédige)[- ]?(moi)?\\s+(le|un|ce)\\s+(mail|e-mail|courriel)"
+      ]
+    },
+    {
+      "id": "R7",
+      "hint": "the user pastes a reviewer's or a review bot's comment and asks for a fix",
+      "question": "which part of this comment is unclear, and what fix would you suggest?",
+      "scope": "all",
+      "patterns": [
+        "greptile",
+        "coderabbit",
+        "Comment on lines \\+?\\d+"
+      ]
+    }
+  ]
+}

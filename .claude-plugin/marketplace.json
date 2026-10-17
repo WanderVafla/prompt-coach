@@ -1,0 +1,14 @@
+{
+  "name": "prompt-coach",
+  "description": "Learn to use AI as a lever, not a crutch",
+  "owner": {
+    "name": "WanderVafla"
+  },
+  "plugins": [
+    {
+      "name": "prompt-coach",
+      "description": "Flags prompts that skip your own thinking in learning projects, logs prompts and writes a weekly review into an Obsidian vault",
+      "source": "./plugins/prompt-coach"
+    }
+  ]
+}

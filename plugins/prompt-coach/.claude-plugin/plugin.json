@@ -1,0 +1,35 @@
+{
+  "name": "prompt-coach",
+  "version": "0.4.0",
+  "description": "Flags prompts that skip your own thinking in learning projects, logs prompts and writes a weekly review into an Obsidian vault",
+  "author": {
+    "name": "WanderVafla"
+  },
+  "userConfig": {
+    "vault": {
+      "type": "string",
+      "title": "Obsidian vault",
+      "description": "Absolute path of the Obsidian vault that receives the weekly reviews.",
+      "default": ""
+    },
+    "reviews_folder": {
+      "type": "string",
+      "title": "Reviews folder",
+      "description": "Folder inside the vault for the reviews, relative to the vault root.",
+      "default": "Prompt reviews"
+    },
+    "author": {
+      "type": "string",
+      "title": "Author",
+      "description": "Your name in reviews. It is what others see when you compare results.",
+      "default": ""
+    },
+    "language": {
+      "type": "string",
+      "title": "Review language",
+      "description": "Language of the review text. auto follows the language of your prompts.",
+      "default": "auto",
+      "options": ["auto", "en", "fr", "ru"]
+    }
+  }
+}
